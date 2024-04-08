@@ -6,4 +6,5 @@ SET(CMAKE_CXX_STANDARD 17)
 include_directories(/usr/local/include/ddscxx /usr/local/include/iceoryx/v2.0.2)
 link_libraries(unitree_sdk2 ddsc ddscxx rt pthread)
 
-add_executable(disable_service src/disable_service.cpp)
+add_executable(disable_service src/corticx/disable_service.cpp src/corticx/RSCUtils.cpp)
+target_include_directories(disable_service PRIVATE include/corticx)
