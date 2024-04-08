@@ -84,9 +84,11 @@ int queryServiceStatus(const std::string& serviceName, RobotStateClient& rsc)
 
 int main(int argc, char const *argv[])
 {   
+    std::string networkInterface;
+    std::string serviceToDeactivate;
     if (argc == 3) {
-        std::string networkInterface = argv[1];
-        std::string serviceToDeactivate = argv[2];
+        networkInterface = argv[1];
+        serviceToDeactivate = argv[2];
         std::cout << "Network interface: " << networkInterface << std::endl;
         std::cout << "Service to disable: " << serviceToDeactivate << std::endl;
     } else {
@@ -94,7 +96,7 @@ int main(int argc, char const *argv[])
         return 1;
     }
     ChannelFactory::Instance()->Init(0, networkInterface);
-    std::cout<<"Try to deactivate service:" << serviceName << std::endl;
+    std::cout<<"Try to deactivate service:" << serviceToDeactivate << std::endl;
 
     // Init robot state client (RSC)
     RobotStateClient rsc;
