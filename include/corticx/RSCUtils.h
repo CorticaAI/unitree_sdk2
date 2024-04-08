@@ -21,7 +21,7 @@ private:
     RobotStateClient rsc;
     void SetServiceSwitch(const std::string& serviceName, int value);
     void InitRobotStateClient();
-    int queryServiceStatus(const std::string& serviceName);
+    int QueryServiceStatus(const std::string& serviceName);
 };
 
 #endif // DEACTIVATE_SERVICE_MANAGER_H
